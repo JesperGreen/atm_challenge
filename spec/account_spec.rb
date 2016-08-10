@@ -1,6 +1,7 @@
 require './lib/account.rb'
 
 describe Account do
+  let(:person) { instance_double('Person', name: 'Jesper') }
 
   it 'is expected to have a 4 digit number on initialize' do
     pin_length = Math.log10(subject.pin_code).to_i + 1
@@ -18,5 +19,13 @@ describe Account do
   it 'deactivates account using Instance method' do
     subject.deactivate
     expect(subject.account_status).to eq :deactivated
+  end
+
+  it 'is expected to have an owner' do
+    expect(subject.owner).to eq person
+  end
+
+  it 'is expected to raise error if there is no owner' do
+    expect { described_class.new }.to raise_error 'An Account owner is required'
   end
 end
