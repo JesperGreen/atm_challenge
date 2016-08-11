@@ -53,7 +53,7 @@ class Atm
   end
 
   def account_disabled?(account_status)
-      account_status == :disabled
+    account_status == :disabled
   end
 
   def add_bills(amount)
