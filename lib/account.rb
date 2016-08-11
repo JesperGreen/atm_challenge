@@ -1,5 +1,5 @@
 class Account
-  attr_accessor :pin_code, :balance, :account_status
+  attr_accessor :pin_code, :balance, :account_status, :owner
 
   def initialize(attrs = {})
     @pin_code = generate_pin
