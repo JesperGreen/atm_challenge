@@ -7,6 +7,7 @@ class Account
     @balance = 0
     @account_status = :active
     set_owner(attrs[:owner])
+    @exp_date = '09/17'
   end
 
   def deactivate

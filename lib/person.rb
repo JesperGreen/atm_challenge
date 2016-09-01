@@ -1,4 +1,4 @@
-require 'account'
+require_relative 'account'
 require 'date'
 
 class Person
